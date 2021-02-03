@@ -1,0 +1,24 @@
+//Requires: <A non empty array of integer type 'a' and 'b'>
+//Modifies: <Only array 'a' is modified by changing the value of an element>
+//Effects:  <Searching through the array 'a' for the largest number and stores it. Then searchs through array 'b' for the largeest number and placing that number in the first element of array 'a'>
+
+public static void substituteMax(int[] a, int[] b) {
+         int maxOfA = a[0];
+         int index = 0;
+
+         for (int i = 0; i < a.length; i++) {
+             if(a[i] > maxOfA) {
+                 maxOfA = a[i];
+                 index = i;
+             }
+         }
+
+         int maxOfB = b[0];
+         for (int i = 0; i < b.length; i++) {
+             if(b[i] > maxOfB) {
+                 maxOfB = b[i];
+             }
+         }
+
+         a[index] = maxOfB;
+     }
